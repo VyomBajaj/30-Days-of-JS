@@ -39,4 +39,32 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 //Task-7
-
+const form=document.getElementById("task");
+form.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    const first=document.getElementById("fname").value;
+    const last=document.getElementById("lname").value;
+    console.log(first,last);
+});
+//Task-8
+const select=document.querySelector('#task8');
+select.addEventListener('change',()=>{
+    const toDisplay = document.querySelector("#para-select");
+    toDisplay.innerHTML = select.value;
+})
+//Task-9
+const itemList = document.getElementById("item-list");
+itemList.addEventListener("click",(event)=>{
+    if (event.target && event.target.matches("li.list-item")) {
+        console.log("Clicked on: " + event.target.textContent);
+    }
+});
+//Task-10
+const create = document.querySelector(".create");
+create.addEventListener('click',()=>{
+    let li = document.createElement('li');
+    li.classList='list-item';
+    li.innerHTML="I am created";
+    document.body.appendChild(li);
+    console.log(li)
+})
