@@ -1,0 +1,23 @@
+{
+  "name": "30-days-of-js",
+  "version": "1.0.0",
+  "description": "Just a repo made for self practice of Javascript in 30 Days with some problems and projects",
+  "main": "Day0.js",
+  "dependencies": {
+    "asynckit": "^0.4.0",
+    "axios": "^1.7.3",
+    "combined-stream": "^1.0.8",
+    "delayed-stream": "^1.0.0",
+    "follow-redirects": "^1.15.6",
+    "form-data": "^4.0.0",
+    "mime-db": "^1.52.0",
+    "mime-types": "^2.1.35",
+    "proxy-from-env": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
