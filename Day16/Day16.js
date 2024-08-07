@@ -67,6 +67,72 @@ console.log(check("abcba",0,4))
 console.log(check("Vyom",0,3))
 //Output - False
 
+//Task-7
+let bfs = (arr,s,e,target)=>{
+    let mid = Math.floor(s + (e - s) / 2);
+    if(s>=e){
+        return -1;
+    }
+    if(target==arr[mid]) return mid;
+    if(target<arr[mid]) return bfs(arr,s,mid-1,target)
+    if(target>arr[mid]) return bfs(arr,mid+1,e,target)
+}
+let arr2=[1,3,4,6,8]
+let e = arr.length - 1 ;
+console.log(bfs(arr2,0,e,6));
+//Output - 3
 
+//Task-8
+let occ = (arr,i,n,target,count)=>{
+    if(i==n) return count;
+    if(arr[i]==target){
+        count++;
+    }
+    return occ(arr,i+1,n,target,count)
+}
+let arr3=[1,3,6,6,8]
+let size= arr3.length
+console.log(occ(arr3,0,size,6,0));
+//Output-2
 
+//Task-9
+let inord = (arr,i)=>{
+    if(i>=arr.length || arr[i]===undefined) return ;
+    let leftChild = 2*i+1;
+    let rightChild = 2*i+2;
+    inord(arr,leftChild);
+    console.log(arr[i]);
+    inord(arr,rightChild);
+}
+inord([2,4,3,2,1],0);
+///Output
+// 2
+// 2
+// 4
+// 1
+// 2
+// 3
+
+//Task-10
+class Tree{
+    constructor(val,left=null,right=null){
+        this.val=val
+        this.left=left
+        this.right=right
+    }
+}
+function height(root){
+    if(root===null) return 0;
+    let leftheight=height(root.left);
+    let rightHeight=height(root.right);
+    return Math.max(leftheight,rightHeight)+1;
+}
+let root = new Tree(1);
+root.left = new Tree(2, new Tree(4), new Tree(5));
+root.right = new Tree(3);
+
+let hgt = height(root);
+console.log(`Height of Binary Tree is ${hgt}`);
+//Output
+// Height of Binary Tree is 3
 
